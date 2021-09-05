@@ -1,0 +1,68 @@
+.sidenav-container {
+  /* height: 100%; */
+  left: 0px;
+  /* height: 90%; */
+  background: #e5e5e5 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+/* .sidenav .mat-toolbar {
+  background: inherit;
+} */
+
+.mat-toolbar.mat-primary {
+  background: #ffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 40px;
+}
+
+.title-toolbar {
+  color: #555555;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "PT Sans Caption", sans-serif;
+  letter-spacing: 0px;
+}
+
+.subtitle-toolbar {
+  color: #555555;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "PT Sans Caption", sans-serif;
+  letter-spacing: 0px;
+}
+
+.img-toolbar {
+  min-height: 30px;
+  max-height: 30px;
+  /* padding: 30px; */
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.ret-button {
+  background-color: #f5f5f5;
+  color: #555555;
+  border-radius: 10%;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "PT Sans Caption", sans-serif;
+  text-align: center;
+  border: 1px #f5f5f5;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.ret-button:hover {
+  background-color: #555555;
+  color: white;
+}

@@ -1,0 +1,34 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap');
+</style>
+<!-- <link rel="stylesheet" href=".\assets\fonts\font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div id="divs" fxFlex fxLayout="column" class="div-head">
+
+
+    <h1 class="title"> Busca de personagens</h1>
+    <span class="subtitle"> Nome do personagem</span>
+
+    <div class="search-input">
+        <input type="search" placeholder="Search" id="search" required />
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+
+
+    <div fxLayout="column" fxLayoutAlign="space-evenly none" class="personagem-lista">
+     
+            <!-- [ngStyle.xs]="{'font-size.px': 10, color: 'blue'}"
+            [ngStyle.sm]="{'font-size.px': 20, color: 'lightblue'}"
+            [ngStyle.md]="{'font-size.px': 30, color: 'orange'}"
+            [ngStyle.lg]="styleLgExp" -->
+
+            <div
+            *ngFor="let personagem of allPersonagens | async" style="padding: 5px">
+            <app-personagem [personagem]="personagem"></app-personagem>
+        </div>
+
+    </div>
+    
+</div>

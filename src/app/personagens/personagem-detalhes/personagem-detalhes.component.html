@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{personagem.name}}</mat-card-title>
+      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    </mat-card-header>
+    <img mat-card-image src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}"
+    alt="{{personagem.name}}">
+    <mat-card-content>
+      <h3>Séries</h3>
+      <div *ngFor="let serie of personagem.series.items.slice(0, 3);">
+        <p class="list-item">{{serie.name}}</p>
+      </div>
+      
+      <h3>Eventos</h3>
+      <div *ngFor="let evento of personagem.events.items.slice(0, 3);">
+        <p class="list-item">{{evento.name}}</p>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
