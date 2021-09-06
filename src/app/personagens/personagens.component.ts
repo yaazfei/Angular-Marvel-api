@@ -21,4 +21,15 @@ export class PersonagensComponent implements OnInit {
   }
 
   
+  getPersonagem(personagemBuscado) {
+    console.log(personagemBuscado);
+    if (personagemBuscado === "" || personagemBuscado === undefined) {
+      return this.allPersonagens;
+    } else {
+      this.allPersonagens = this.personagemSvc.getAllPersonagensPorNome(personagemBuscado);
+    }
+  }
+
+
+
 }

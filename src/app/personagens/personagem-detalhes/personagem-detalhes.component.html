@@ -1,22 +1,27 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="div-head">
+  
 
 <mat-card class="personagem-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <div mat-card-avatar  [routerLink]="['/']">
+        <mat-icon class="material-icons">arrow_back_ios</mat-icon>
+    </div>
+
     <mat-card-title class="title-item">{{personagem.name}}</mat-card-title>
     <!-- <mat-card-subtitle></mat-card-subtitle> -->
   </mat-card-header>
   <img mat-card-image src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="{{personagem.name}}">
   
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile colspan="1">
-        <h3 class="list-item" style="font-weight: bold;">Séries</h3>
+    <mat-grid-list cols="2" class="detalhes-grid" rowHeight="4rem">
+      <mat-grid-tile colspan="1" rowspan="3">
+        <h3 class="list-title">Séries</h3>
         <div *ngFor="let serie of personagem.series.items.slice(0, 3);">
           <p class="list-item">{{serie.name}}</p>
         </div>
       </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <h3 class="list-item" style="font-weight: bold;">Eventos</h3>
+      <mat-grid-tile colspan="1" rowspan="3">
+        <h3 class="list-title">Eventos</h3>
         <div *ngFor="let evento of personagem.events.items.slice(0, 3);">
           <p class="list-item">{{evento.name}}</p>
         </div>

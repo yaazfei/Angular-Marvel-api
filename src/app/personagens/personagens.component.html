@@ -12,23 +12,44 @@
     <span class="subtitle"> Nome do personagem</span>
 
     <div class="search-input">
-        <input type="search" placeholder="Search" id="search" required />
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="search" placeholder="Search" id="search" name="personagemProcurado" #personagemProcurado
+            required (keyup.enter)="getPersonagem(personagemProcurado.value)"/>
+        <i class="fa fa-search" aria-hidden="true" (click)="getPersonagem(personagemProcurado.value)"></i>
     </div>
 
-
     <div fxLayout="column" fxLayoutAlign="space-evenly none" class="personagem-lista">
-     
-            <!-- [ngStyle.xs]="{'font-size.px': 10, color: 'blue'}"
+
+        
+        <mat-grid-list cols="7" class="indice-grid" rowHeight="1rem">
+            <mat-grid-tile colspan="1" rowspan="1">
+                <span>Personagem</span>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1">
+                <span></span>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1">
+                <span>Séries</span>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1">
+                <span>Eventos</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <div class="indice-grid-mobile">
+            <span>Personagem</span>
+        </div>
+
+
+
+        <!-- [ngStyle.xs]="{'font-size.px': 10, color: 'blue'}"
             [ngStyle.sm]="{'font-size.px': 20, color: 'lightblue'}"
             [ngStyle.md]="{'font-size.px': 30, color: 'orange'}"
             [ngStyle.lg]="styleLgExp" -->
 
-            <div
-            *ngFor="let personagem of allPersonagens | async" style="padding: 5px">
+        <div *ngFor="let personagem of allPersonagens | async" style="padding: 5px">
             <app-personagem [personagem]="personagem"></app-personagem>
         </div>
 
     </div>
-    
+
 </div>

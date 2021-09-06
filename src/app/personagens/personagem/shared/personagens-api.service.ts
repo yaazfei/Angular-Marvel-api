@@ -25,4 +25,14 @@ export class PersonagensApiService {
   }
 
 
+  getAllPersonagensPorNome (name: any) : Observable<any> {
+    this.URL_API = this.URL_API_GET + this.URL_API_SUFIX;
+    return this.http.get<any> (`${this.URL_API}&name=${name}`)
+    .pipe(map ((data: any) => {
+      debugger;
+      console.log(`Resultado busca de personagem por nome: ${data?.data?.results}`);
+      return data.data.results;
+    }))
+  }
+
 }

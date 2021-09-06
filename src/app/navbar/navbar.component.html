@@ -9,10 +9,12 @@
 
     <mat-toolbar color="primary">
 
-      <img src=".\assets\images\logo.png" class="img-toolbar"/>
+      <img src=".\assets\images\logo.png" class="img-toolbar" [routerLink]="['/']"/>
       <span class="example-spacer"></span>
-      <h1 class="title-toolbar">Yasmin Feitosa </h1>
-      <h1 class="subtitle-toolbar">Teste de Front-end</h1>
+      <div class="div-info">
+        <span class="title-toolbar">Yasmin Feitosa </span>
+        <span class="subtitle-toolbar">Teste de Front-end</span>
+      </div>
       <button class="ret-button">CB</button>
 
     </mat-toolbar>

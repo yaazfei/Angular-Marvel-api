@@ -1,6 +1,6 @@
 <mat-card class="personagem-card" (click)="openDetalhes('personagem', personagem)">
 
-    <mat-grid-list cols="7" rowHeight="2:1">
+    <mat-grid-list cols="7" rowHeight="2:1" class="grid-list">
 
         <!-- <mat-card-content class="card-content" fxLayout="row"> -->
         <mat-grid-tile class="image-card" colspan="1">
@@ -20,10 +20,19 @@
                 <p class="list-item">{{evento.name}}</p>
             </div>
         </mat-grid-tile>
-
-        <!-- </mat-card-content> -->
-
     </mat-grid-list>
+
+
+    <mat-grid-list cols="3" rowHeight="2:1" class="grid-list-mobile">
+    <mat-grid-tile class="image-card-mobile" colspan="1">
+        <img mat-card-image src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}"
+            alt="{{personagem.name}}">
+    </mat-grid-tile>
+    <mat-grid-tile  colspan="2" layout="column" layout-align="center center">
+        <p  class="name-item" layout="column" layout-align="center center">{{personagem.name}}</p>
+    </mat-grid-tile>
+    
+</mat-grid-list>
 
 
 </mat-card>
